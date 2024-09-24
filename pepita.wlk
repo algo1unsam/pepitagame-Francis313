@@ -29,13 +29,17 @@ object pepita {
 	}
 
 	method irA(nuevaPosicion) {
+		if(self.puedeVolar()){
 		self.vola(position.distance(nuevaPosicion))
 		position = nuevaPosicion
+		}
 	}
 
 	method estaCansada() {
 		return energia <= 0
 	}
+
+	method puedeVolar(){return energia>0}
 
 	method estaEnElNido() {
 		return position == nido.position()
@@ -43,8 +47,18 @@ object pepita {
 	
 	
 	method estaEnElSuelo() {
-		return position.y() == 0 
+		return position.y() != 0 
 	}
 
+	method caete() { 
+		if(self.estaEnElSuelo()) {position = self.position().down(1)}
+	}
+
+
+
 }
+
+
+
+
 
