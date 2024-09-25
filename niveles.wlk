@@ -49,17 +49,20 @@ object config {
 		keyboard.left().onPressDo({ pepita.irA(pepita.position().left(1)) })
 		keyboard.right().onPressDo({ pepita.irA(pepita.position().right(1))})
 		keyboard.up().onPressDo({pepita.irA(pepita.position().up(1))})
+		keyboard.c().onPressDo({pepita.come(game.uniqueCollider(pepita))})
 		
 	}
 	
 	method configurarColisiones() {
 		game.onCollideDo(pepita, { algo => algo.teEncontro(pepita) })
+	//	game.whenCollideDo(pepita, { (game.uniqueCollider(pepita)).destruir() })
+		
 	}
 
 
 
 	method configurarGravedad(){
-		game.onTick(1000, "movimiento", { pepita.caete() })
+		game.onTick(5000, "movimiento", { pepita.caete() })
 	}
 
 

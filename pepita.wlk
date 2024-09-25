@@ -1,9 +1,10 @@
 import extras.*
 import wollok.game.*
+import comidas.*
 
 object pepita {
 
-	var property energia = 100
+	var property energia = 1000
 	var property position = game.origin()
 
 	method image() {
@@ -22,6 +23,7 @@ object pepita {
 
 	method come(comida) {
 		energia = energia + comida.energiaQueOtorga()
+		game.removeVisual(comida)
 	}
 
 	method vola(kms) {
@@ -29,7 +31,7 @@ object pepita {
 	}
 
 	method irA(nuevaPosicion) {
-		if(self.puedeVolar()){
+		if(not self.estaCansada()){
 		self.vola(position.distance(nuevaPosicion))
 		position = nuevaPosicion
 		}
@@ -38,8 +40,6 @@ object pepita {
 	method estaCansada() {
 		return energia <= 0
 	}
-
-	method puedeVolar(){return energia>0}
 
 	method estaEnElNido() {
 		return position == nido.position()
@@ -53,6 +53,11 @@ object pepita {
 	method caete() { 
 		if(self.estaEnElSuelo()) {position = self.position().down(1)}
 	}
+
+
+
+
+
 
 
 

@@ -14,6 +14,6 @@ Como Pepita pierde energía al moverse, vamos a necesitar que pueda comer las co
 - Configurar la C para que Pepita coma la comida sobre la que está parada. Al comer una comida, pepita aumenta su energía correspondiente a la otorgada por la comida y ésta última desaparece del juego.
 > Para obtener el objeto con el que pepita se encuentra colisionando usar el mensaje `game.uniqueCollider(pepita)`.
 - **BONUS**: 
-  - Antes de mover a pepita, controlar que no se vaya del rango visible del juego.
+  - Antes de mover a pepita, controlar que no se vaya del rango visible del juego. (.between)
   - Luego de moverse, si se queda sin energía, terminar el juego.
   - Utilizar el evento `onTick` para agregar gravedad, haciendo que pepita pierda altura cada `800` milisegundos, es decir, descienda su coordenada `y` en 1, pero _sin perder energía_.
