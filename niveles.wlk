@@ -52,14 +52,10 @@ object config {
 		keyboard.down().onPressDo({pepita.irA(pepita.position().down(1))})
 
 		keyboard.c().onPressDo({pepita.accion()})
-
-
-
-		
 	}
 	
 	method configurarColisiones() {
-		game.onCollideDo(pepita, { algo => algo.teEncontro(pepita) })
+		game.onCollideDo(pepita, { algo => if(pepita.estaEnElNido() or pepita.esAtrapada()){algo.teEncontro(pepita)} })
 	}
 
 
