@@ -31,7 +31,7 @@ object pepita {
 	}
 
 	method irA(nuevaPosicion) {
-		if(not self.estaCansada()){
+		if(not self.estaCansada() and nuevaPosicion.x().between(0, game.width()-1) and nuevaPosicion.y().between(0, game.height()-1)){
 		self.vola(position.distance(nuevaPosicion))
 		position = nuevaPosicion
 		}
