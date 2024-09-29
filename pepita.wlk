@@ -10,7 +10,7 @@ object pepita {
 	method image() {
 		return if (self.estaEnElNido())
 		{ 
-			"pepita-grande.png"
+		"pepita-grande.png"
 		} 
 		else if (self.esAtrapada() or self.estaCansada())
 		{
@@ -31,10 +31,14 @@ object pepita {
 	}
 
 	method irA(nuevaPosicion) {
-		if(not self.estaCansada() and nuevaPosicion.x().between(0, game.width()-1) and nuevaPosicion.y().between(0, game.height()-1)){
+
+		if(not self.estaCansada() and nuevaPosicion.x().between(0, game.width()-1) and nuevaPosicion.y().between(0, game.height()-1))
+		{
 		self.vola(position.distance(nuevaPosicion))
 		position = nuevaPosicion
 		}
+
+
 	}
 
 	method estaCansada() {
@@ -56,9 +60,13 @@ object pepita {
 
 
 
+	method ganar(){ return "Gane!"}
+	method perder(){ return "Me atraparon!"}
 
-
-
+	method accion(){
+		if(position == manzana.position() or position == alpiste.position()){
+		self.come(game.uniqueCollider(self))}
+	}
 
 
 }

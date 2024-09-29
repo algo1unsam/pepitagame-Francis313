@@ -51,7 +51,10 @@ object config {
 		keyboard.up().onPressDo({pepita.irA(pepita.position().up(1))})
 		keyboard.down().onPressDo({pepita.irA(pepita.position().down(1))})
 
-		keyboard.c().onPressDo({pepita.come(game.uniqueCollider(pepita))})
+		keyboard.c().onPressDo({pepita.accion()})
+
+
+
 		
 	}
 	
@@ -62,7 +65,7 @@ object config {
 
 
 	method configurarGravedad(){
-		game.onTick(1500, "movimiento", { pepita.caete() })
+		game.onTick(800, "movimiento", { pepita.caete() })
 	}
 
 
