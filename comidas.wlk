@@ -1,12 +1,14 @@
 import wollok.game.*
+import pepita.*
+import niveles.*
 
 object manzana {
-
 	method image() = "manzana.png"
 
-	method position() = game.at(1, 8)
+	method position() = game.at(1, 5)
 
 	method energiaQueOtorga() = 40
+
 
 }
 
@@ -18,5 +20,6 @@ object alpiste {
 
 	method energiaQueOtorga() = 70
 
+	
 }
 
