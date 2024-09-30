@@ -4,7 +4,7 @@ import comidas.*
 
 object pepita {
 
-	var property energia = 1000
+	var property energia = 100
 	var property position = game.origin()
 
 	method image() {

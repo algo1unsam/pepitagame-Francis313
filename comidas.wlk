@@ -7,7 +7,7 @@ object manzana {
 
 	method position() = game.at(1, 5)
 
-	method energiaQueOtorga() = 400
+	method energiaQueOtorga() = 40
 
 
 }
